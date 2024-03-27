@@ -10,10 +10,9 @@ body {
 }
 
 form {
-  width: 24%;
+  width: 65%;
   background-color: white;
   padding: 50px;
-  border-radius: 20px;
   border: 1px solid black;
 }
 
@@ -22,12 +21,11 @@ form {
   border: none;
   border-radius: 50px;
   /* background: linear-gradient(90deg, rgb(40, 17, 1)0%, rgb(14, 138, 154)35%, rgb(155, 48, 67)100%); */
-
 }
 
 .form-control {
   color: rgba(0, 0, 0, 87);
-  border-bottom-color: rgba(0, 0, 0, .42);
+  border-bottom-color: rgba(0, 0, 0, 0.42);
   box-shadow: none !important;
   border: none;
   border-bottom: 1px solid black;
@@ -68,7 +66,6 @@ form {
   width: 150px;
   text-align: center;
   align-items: center;
-
 }
 
 .action {
@@ -80,9 +77,6 @@ form {
   width: 100px;
   height: 30px;
 }
-
-
-
 
 .container {
   margin: 5rem;
@@ -115,10 +109,10 @@ p {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   max-width: 30rem;
   padding: 2rem 3rem;
-  border-radius: 0.5rem ;
+  border-radius: 0.5rem;
   background-color: #fff;
 }
 
@@ -132,7 +126,6 @@ p {
   cursor: pointer;
   font-family: "work sans", sans-serif;
   transform: scale(0.9);
-
 }
 
 .modal-btn:hover {
@@ -142,19 +135,19 @@ p {
   transform: scale(1);
   transition: all 0.1s;
 }
-.inputitem{
+.inputitem {
   width: 100px;
   height: 35px;
   text-align: center;
   padding: 5px;
 }
-.logout{
+.logout {
   width: 100px;
   height: 35px;
   text-align: center;
   padding: 5px;
 }
-.title{
+.title {
   /* width: 100px; */
   height: 35px;
   text-align: center;
