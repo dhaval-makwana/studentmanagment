@@ -1,0 +1,2 @@
+# studentmanagment
+ student mangment app
