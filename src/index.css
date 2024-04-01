@@ -39,13 +39,14 @@ form {
 }
 
 .parts {
+  display: flex;
   border: 1px solid black;
 }
 
-.main_table {
+/* .main_table {
   width: 50%;
   background-color: red;
-}
+} */
 
 .navbar a {
   font-size: 1.3rem;
@@ -59,9 +60,16 @@ form {
 }
 
 .editbox {
+  margin-bottom:60px  ;
+  height: 100px;
+
   display: flex;
-  justify-content: space-around;
-  /* display: none; */
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .inputBox {
@@ -115,10 +123,10 @@ p {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   max-width: 30rem;
   padding: 2rem 3rem;
-  border-radius: 0.5rem ;
+  border-radius: 0.5rem;
   background-color: #fff;
 }
 
@@ -142,32 +150,49 @@ p {
   transform: scale(1);
   transition: all 0.1s;
 }
-.inputitem{
+
+.inputitem {
   width: 100px;
   height: 35px;
   text-align: center;
   padding: 5px;
 }
-.logout{
-  width: 100px;
-  height: 35px;
-  text-align: center;
-  padding: 5px;
+
+.logout {
+  
+  display: flex;
+  justify-content: center;
 }
-.title{
+
+.title {
   /* width: 100px; */
   height: 35px;
   text-align: center;
   align-items: center;
   /* padding: 25px; */
 }
+
 .heading {
   width: 100%;
   height: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   align-items: center;
-  padding-bottom: 15px;
+  flex-wrap: wrap;
+  /* padding-bottom: 15px; */
+}
+.mytable{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+.maintable{
+  overflow-x: auto;
 }

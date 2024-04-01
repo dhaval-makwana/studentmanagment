@@ -18,7 +18,7 @@ const Studata = () => {
         let dasda = JSON.parse(localStorage.getItem('list'))
         if (dasda) {
             setDatalist(dasda)
-            setRecords(dasda)
+            // setRecords(dasda)
            
         }
     }, [])
@@ -31,7 +31,7 @@ const Studata = () => {
         let deleteItem = [...Datalist];
         const newdata = deleteItem.filter((da) => da.fullname !== name)
         //   after search field setRecords.... without search field setDatalist   // 
-        setRecords(newdata)
+        setDatalist(newdata)
         localStorage.setItem("list", JSON.stringify(newdata));
     }
 
@@ -64,7 +64,7 @@ const Studata = () => {
             password: editPassword,
             phone: editPhone
         }
-        setRecords(EditedItem);
+        setDatalist(EditedItem);
         //   after search field setRecords.... without search setDatalist   // 
         localStorage.setItem("list", JSON.stringify(EditedItem))
         setTimeout(() => {
@@ -79,9 +79,9 @@ const Studata = () => {
     }
 
     //search filter//
-    const Filter = (event) => {
-        setRecords(Datalist.filter(f => f.fullname.toLowerCase().includes(event.target.value)));
-    };
+    // const Filter = (event) => {
+    //     setRecords(Datalist.filter(f => f.fullname.toLowerCase().includes(event.target.value)));
+    // };
     const logout = () => {
         navigate('/')
     }
@@ -91,10 +91,10 @@ const Studata = () => {
             <div className="col-8 mx-auto">
                 <div className="row parts p-3">
                     <div className="heading col-12 mx-auto" >
-                        <input id="search" type="text" className="inputitem" placeholder="search" onChange={Filter} />
-                        <h1 className=" title">Students Data</h1>
-                        <button className="btn btn-light logout" onClick={logout}>logout</button>
+                        {/* <input id="search" type="text" className="inputitem" placeholder="search" onChange={Filter} /> */}
+                        <h1 className=" title d-flex justify-content-center align-items-center">Students Data</h1>
                     </div>
+                        <button className="btn btn-light logout" onClick={logout}>logout</button>
 
                     <div className=" col-12 mx-auto editbox">
                         <input type="text" className="inputBox" value={editFullname} onChange={(e) => seteditFullname(e.target.value)} placeholder="fullname" />
@@ -104,7 +104,10 @@ const Studata = () => {
                         <input type="text" className="inputBox" value={editPassword} onChange={(e) => seteditPassword(e.target.value)} placeholder="password" />
                         <button className="edited" onClick={editedBtn}>edited</button>
                     </div>
-                    <table class="table table-striped col-12 mx-auto mytable">
+                    <div className="maintable">
+
+                  
+                    <table class="table table-striped col-12 mx-auto overflow-x:auto; mytable">
                         <thead>
                             <tr>
                                 <th scope="col">Firstname</th>
@@ -116,7 +119,7 @@ const Studata = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {records.map((data, index) => {
+                            {Datalist.map((data, index) => {
                                 //after search filter records.map ...without search filter Datalist.map//
                                 return (
                                     <tr id={index}>
@@ -137,6 +140,8 @@ const Studata = () => {
                             }
                         </tbody>
                     </table>
+</div>
+
                 </div>
             </div>
         </div>
