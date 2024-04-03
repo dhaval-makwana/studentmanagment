@@ -60,7 +60,7 @@ form {
 }
 
 .editbox {
-  margin-bottom:60px  ;
+  margin-bottom: 80px;
   height: 100px;
 
   display: flex;
@@ -76,7 +76,7 @@ form {
   width: 150px;
   text-align: center;
   align-items: center;
-
+  
 }
 
 .action {
@@ -159,7 +159,7 @@ p {
 }
 
 .logout {
-  
+
   display: flex;
   justify-content: center;
 }
@@ -183,16 +183,19 @@ p {
   flex-wrap: wrap;
   /* padding-bottom: 15px; */
 }
-.mytable{
+
+.mytable {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
 }
-th, td {
+
+th,
+td {
   text-align: left;
   padding: 8px;
 }
 
-.maintable{
+.maintable {
   overflow-x: auto;
 }

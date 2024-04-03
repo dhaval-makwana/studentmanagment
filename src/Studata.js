@@ -5,11 +5,11 @@ import Login from "./Login";
 import Registration from "./Registration";
 import { useNavigate } from "react-router-dom";
 const Studata = () => {
-    const [editFullname, seteditFullname] = useState()
-    const [editLastname, seteditLastname] = useState()
-    const [editPhone, seteditPhone] = useState()
-    const [editEmail, seteditEmail] = useState()
-    const [editPassword, seteditPassword] = useState()
+    const [editFullname, seteditFullname] = useState("")
+    const [editLastname, seteditLastname] = useState("")
+    const [editPhone, seteditPhone] = useState("")
+    const [editEmail, seteditEmail] = useState("")
+    const [editPassword, seteditPassword] = useState("")
     const [Datalist, setDatalist] = useState([])
     const [records, setRecords] = useState(Datalist);
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Studata = () => {
         if (dasda) {
             setDatalist(dasda)
             // setRecords(dasda)
-           
+
         }
     }, [])
 
@@ -94,53 +94,54 @@ const Studata = () => {
                         {/* <input id="search" type="text" className="inputitem" placeholder="search" onChange={Filter} /> */}
                         <h1 className=" title d-flex justify-content-center align-items-center">Students Data</h1>
                     </div>
-                        <button className="btn btn-light logout" onClick={logout}>logout</button>
-
-                    <div className=" col-12 mx-auto editbox">
-                        <input type="text" className="inputBox" value={editFullname} onChange={(e) => seteditFullname(e.target.value)} placeholder="fullname" />
-                        <input type="text" className="inputBox" value={editLastname} onChange={(e) => seteditLastname(e.target.value)} placeholder="lastname" />
-                        <input type="text" className="inputBox" value={editPhone} onChange={(e) => seteditPhone(e.target.value)} placeholder="phone" />
-                        <input type="text" className="inputBox" value={editEmail} onChange={(e) => seteditEmail(e.target.value)} placeholder="email" />
-                        <input type="text" className="inputBox" value={editPassword} onChange={(e) => seteditPassword(e.target.value)} placeholder="password" />
-                        <button className="edited" onClick={editedBtn}>edited</button>
-                    </div>
+                    <button className="btn btn-light logout" onClick={logout}>logout</button>
+                    {editFullname !== "" &&
+                        <div className="col-12 mx-auto  editbox">
+                            <input type="text" className="inputBox" value={editFullname} onChange={(e) => seteditFullname(e.target.value)} placeholder="fullname" />
+                            <input type="text" className="inputBox" value={editLastname} onChange={(e) => seteditLastname(e.target.value)} placeholder="lastname" />
+                            <input type="text" className="inputBox" value={editPhone} onChange={(e) => seteditPhone(e.target.value)} placeholder="phone" />
+                            <input type="text" className="inputBox" value={editEmail} onChange={(e) => seteditEmail(e.target.value)} placeholder="email" />
+                            <input type="text" className="inputBox" value={editPassword} onChange={(e) => seteditPassword(e.target.value)} placeholder="password" />
+                            <button className="edited" onClick={editedBtn}>edited</button>
+                        </div>
+                    }
                     <div className="maintable">
 
-                  
-                    <table class="table table-striped col-12 mx-auto overflow-x:auto; mytable">
-                        <thead>
-                            <tr>
-                                <th scope="col">Firstname</th>
-                                <th scope="col">Lastname</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">email</th>
-                                <th scope="col">password</th>
-                                <th scope="col">action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {Datalist.map((data, index) => {
-                                //after search filter records.map ...without search filter Datalist.map//
-                                return (
-                                    <tr id={index}>
-                                        <td>{data.fullname}</td>
-                                        <td>{data.lastname}</td>
-                                        <td>{data.phone}</td>
-                                        <td>{data.email}</td>
-                                        <td>{data.password}</td>
-                                        <td>
-                                            <div className=" action ">
-                                                <button type="button" class="btn btn-outline-dark buttons" onClick={() => Edit(data.fullname)}><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-outline-danger buttons" onClick={() => Delete(data.fullname)}><i class="fa fa-trash" ></i></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                )
-                            })
-                            }
-                        </tbody>
-                    </table>
-</div>
+
+                        <table class="table table-striped col-12 mx-auto overflow-x:auto; mytable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Firstname</th>
+                                    <th scope="col">Lastname</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">email</th>
+                                    <th scope="col">password</th>
+                                    <th scope="col">action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {Datalist.map((data, index) => {
+                                    //after search filter records.map ...without search filter Datalist.map//
+                                    return (
+                                        <tr id={index}>
+                                            <td>{data.fullname}</td>
+                                            <td>{data.lastname}</td>
+                                            <td>{data.phone}</td>
+                                            <td>{data.email}</td>
+                                            <td>{data.password}</td>
+                                            <td>
+                                                <div className=" action ">
+                                                    <button type="button" class="btn btn-outline-dark buttons" onClick={() => Edit(data.fullname)}><i class="fa fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-outline-danger buttons" onClick={() => Delete(data.fullname)}><i class="fa fa-trash" ></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
             </div>
